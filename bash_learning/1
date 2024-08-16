@@ -1,0 +1,16 @@
+Match exec "/usr/local/bin/sft resolve -q %h"
+ProxyCommand "/usr/local/bin/sft" proxycommand %h
+UserKnownHostsFile "~/Library/Application Support/ScaleFT/proxycommand_known_hosts"
+
+# work github account 
+Host github.com-work
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa
+  IdentitiesOnly yes
+
+Host github.com-personal
+ HostName github.com
+ User git
+ IdentityFile ~/.ssh/personal_rsa
+ IdentitiesOnly yes
